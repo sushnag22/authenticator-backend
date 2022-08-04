@@ -13,15 +13,15 @@ import javax.validation.constraints.NotBlank;
 public class User {
 
     private @Id @GeneratedValue long id;
-    private @NotBlank String userName;
+    private @NotBlank String name;
     private @NotBlank String password;
 
     public User() {
 
     }
 
-    public User(@NotBlank String userName, @NotBlank String password) {
-        this.userName = userName;
+    public User(@NotBlank String name, @NotBlank String password) {
+        this.name = name;
         this.password = password;
     }
 
@@ -29,12 +29,12 @@ public class User {
         return id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String userName) {
+        this.name = userName;
     }
 
     public String getPassword() {
@@ -47,7 +47,7 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userName, password);
+        return Objects.hash(id, name, password);
     }
 
     @Override
@@ -65,10 +65,10 @@ public class User {
                 return false;
         } else if (!password.equals(other.password))
             return false;
-        if (userName == null) {
-            if (other.userName != null)
+        if (name == null) {
+            if (other.name != null)
                 return false;
-        } else if (!userName.equals(other.userName))
+        } else if (!name.equals(other.name))
             return false;
 
         return true;
@@ -76,7 +76,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User {id=" + id + ", userName='" + userName + "', password='" + password + "'}";
+        return "User {id=" + id + ", userName='" + name + "', password='" + password + "'}";
     }
 
 }

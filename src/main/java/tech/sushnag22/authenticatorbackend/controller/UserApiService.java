@@ -40,7 +40,7 @@ public class UserApiService {
 
         for (User u: users) {
             if (u.equals(user)) {
-                return user.getUserName();
+                return user.getName();
             }
         }
 
